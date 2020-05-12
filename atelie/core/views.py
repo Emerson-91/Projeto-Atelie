@@ -19,4 +19,6 @@ def Consulta(request):
     return render(request, template, context)
 
 def Produto(request):
-    return HttpResponse('<h1> Cadastro de Produtos </h1>')
+    template = "produtos.html"
+    context = {}
+    return render(request, template, context)
