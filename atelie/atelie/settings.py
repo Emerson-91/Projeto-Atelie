@@ -123,5 +123,4 @@ STATICFILES_DIRS = (
     '/home/python/DEV/Projeto-Atelie/atelie/templates',
 )
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
 STATIC_URL = '/static/'

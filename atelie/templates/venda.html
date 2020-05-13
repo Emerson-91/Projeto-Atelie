@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 {% block listing %}
 <h1> Tela de Cadastro de cliente e vendas de produtos</h1>
-
+{% block content %}
+ <form action="" method="post">
+     {% csrf_token %}
+     {{ form.as_p }}
+     <button type="submit">Salvar</button>
+ </form>
+{% endblock content %}
 {% endblock %}
