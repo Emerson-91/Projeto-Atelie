@@ -20,9 +20,12 @@ def Consulta(ListView):
     #return render(request, template, model, context_object)
 
 def Produto(request):
-    form = ProdutosForm()
-    form.is_valid()
-    form.save()
+    if request.method == 'POST':
+        form = ProdutosForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = ProdutosForm()
     return render(request, 'produtos.html', {'form':form})
 
 

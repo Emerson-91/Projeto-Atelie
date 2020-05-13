@@ -5,7 +5,8 @@
  <form action="" method="post">
      {% csrf_token %}
      {{ form.as_p }}
-     <button type="submit">Salvar</button>
+     <button type="submit" onclick="Alerta()">Salvar</button>
+     <button type="reset"> Limpar </button>
  </form>
 {% endblock content %}
 {% endblock %}
