@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+      <title>Home</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+    </head>
+
+    <body>
+    {% block navigation %}
+<header id="header">
+	<nav class="links" style="--items: 4;">
+		<a href="{% url 'index' %}">Ateliê</a>
+        <a href="{% url 'venda' %}">Vendas</a>
+		<a href="{% url 'produto' %}">Cad Produtos</a>
+		<a href="{% url 'consulta' %}">Consultas</a>
+
+		<span class="line"></span>
+	</nav>
+</header>
+    {% endblock %}
+
+<div class="content">

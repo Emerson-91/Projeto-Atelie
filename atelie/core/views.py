@@ -7,9 +7,9 @@ def Venda(request):
     return render(request, template, context)
 
 def Home(request):
-    msg = "Teste Ola Mundo!"
+
     template = "index.html"
-    context = {'msg': msg, }
+    context = { }
     return render(request, template, context)
 
 

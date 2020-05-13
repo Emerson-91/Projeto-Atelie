@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-<ul>
-    <li> Vendas </li>
-    <li> Consulta</li>
-    <li> Cadastro de Produtos </li>
-    <li>{{msg}}</li>
-</ul>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block listing %}
+	<strong>Teste</strong>
+	<ul>
+		<li>Teste da pagina HOME.</li>
+	</ul>
+	<strong>Cons</strong>
+	<ul>
+		<li>Home</li>
+		<li>All links need to have a consistent dimensions for this to work</li>
+		<li>You have to set everything up yourself in terms of telling the nav how many items there are and where the <code>.line</code> should move to whenever one of the links gets hovered.</li>
+
+	</ul>
+	<strong>Notes</strong>
+	<ul>
+		<li>This uses Custom Properties, Calc, and Grid.</li>
+		<li>While I couldn't find an easier way to make the line work with unevenly sized links, I tried my best to compensate for it by including the <code>--width</code> and <code>--left</code> custom properties, both of which would take priority over the current setup should either be defined.</li>
+	</ul>
+{% endblock %}
