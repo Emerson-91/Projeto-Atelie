@@ -25,7 +25,7 @@ SECRET_KEY = 'bscq80ip!cq41&li1fk2r3ijg49(u_=-=2e+qpv#!e1&dp3rql'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.23', 'localhost', '0.0.0.0', '0.0.0.0:8000']
+ALLOWED_HOSTS = ['192.168.1.23', 'localhost', '0.0.0.0', '0.0.0.0:8000', '127.0.0.1']
 
 
 # Application definition
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'atelie.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'/home/python/DEV/Projeto-Atelie/atelie/templates'],
+        'DIRS': [r'/home/manutencao/PycharmProjects/Projeto-Atelie/atelie/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,7 +70,7 @@ TEMPLATES = [
         },
     },
 ]
-
+# r'/home/python/DEV/Projeto-Atelie/atelie/templates'
 WSGI_APPLICATION = 'atelie.wsgi.application'
 
 
@@ -121,6 +121,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 STATICFILES_DIRS = (
     '/home/python/DEV/Projeto-Atelie/atelie/templates',
+    '/home/manutencao/PycharmProjects/Projeto-Atelie/atelie/templates',
 )
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 STATIC_URL = '/static/'

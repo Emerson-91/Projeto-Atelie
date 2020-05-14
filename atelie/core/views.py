@@ -13,11 +13,23 @@ def Venda(request):
         form = CadastroForm()
     return render(request, 'venda.html', {'form':form})
 
-def Consulta(ListView):
+
+def Consulta(request):
     template = "consulta.html"
-    model = Cadastro
-    context_object = 'nome'
-    #return render(request, template, model, context_object)
+    List = Cadastro.objects.all()
+    busca = request.GET.get('search')
+    if busca:
+       List = Cadastro.object.filter(nome__icontains = busca) # VERIFICAR O PROBLEMA DE NAO ESTAR BUSCANDO
+    return render(request, template, {'List':List})
+
+
+def consultaProd(request):
+    template = "consultaprodutos.html"
+    List = CadProduto.objects.all()
+    return render(request, template, {'List':List})
+
+
+
 
 def Produto(request):
     if request.method == 'POST':

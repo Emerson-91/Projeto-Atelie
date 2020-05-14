@@ -31,7 +31,7 @@ code {
 	margin-top: 80px;
 	padding: 20px;
 	width: 100%;
-	max-width: 800px;
+	max-width: 1000px;
 }
 .content ul {
 	margin: .5em 2em;
@@ -129,3 +129,21 @@ code {
 .links > a:nth-of-type(9):hover ~ .line { --index: 9; }
 .links > a:nth-of-type(10):hover ~ .line { --index: 10; }
 .links > a:last-of-type:hover ~ .line { --index: var(--items); }
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #0066cc;
+    color: white;
+}

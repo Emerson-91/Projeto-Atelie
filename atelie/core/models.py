@@ -15,5 +15,8 @@ class Cadastro(models.Model):
     data_pedido = models.DateTimeField('data do pedido', auto_now_add=True)
     entrega = models.CharField(max_length=10, choices=ENTREGA)
     qtd = models.IntegerField(default=0)
-    prod_id = models.ForeignKey(CadProduto, related_name='produtos', on_delete=models.CASCADE)
+    prod_id = models.ForeignKey(CadProduto, null=True, related_name='produtos', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nome
 

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block listing %}
 <h1> Tela para cadastro de produtos </h1>
+<br>
 {% block content %}
  <form action="" method="post">
      {% csrf_token %}
@@ -8,4 +9,7 @@
      <button type="submit">Salvar</button>
  </form>
 {% endblock content %}
+
+{% include 'consultaprodutos.html' %}
+
 {% endblock %}

@@ -1,5 +1,37 @@
 {% extends 'base.html' %}
 {% block listing %}
 <h1> Aqui vai ser a tela de consulta de clientes!! </h1>
+<br>
+<form method="GET">
+<div class=”input-group-prepend”>
+<button class=”btn btn-outline-secondary” type=”submit” id=”button-addon1">Buscar</button>
+</div>
+<input type=”text” class=”form-control” placeholder=”” name=”search” id=”search”>
 
+</form>
+<br><br>
+<table>
+  <thead>
+    <tr>
+        <th>Nr Pedido</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Endereco</th>
+        <th> Data do pedido</th>
+        <th> Valor</th>
+    </tr>
+   </thead>
+    {% for value in List %}
+    <tbody>
+       <tr>
+        <td>{{ value.pedido }}</td>
+        <td>{{ value.nome }}</td>
+        <td>{{ value.telefone}}</td>
+        <td>{{ value.endereco }}</td>
+        <td>{{ value.data_pedido}}</td>
+        <td>valor</td>
+       </tr>
+    </tbody>
+    {% endfor %}
+</table>
 {% endblock %}}

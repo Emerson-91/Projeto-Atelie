@@ -1,0 +1,21 @@
+{% extends 'produtos.html' %}
+{% block listing %}
+<h2 align="center"> Produtos cadastrados</h2>
+<br>
+<table>
+  <thead>
+    <tr>
+        <th>Produto</th>
+        <th> Valor</th>
+    </tr>
+   </thead>
+    {% for value in List %}
+    <tbody>
+       <tr>
+        <td>{{ value.produto }}</td>
+        <td>{{ value.valor}}</td>
+       </tr>
+    </tbody>
+    {% endfor %}
+
+{% endblock %}
