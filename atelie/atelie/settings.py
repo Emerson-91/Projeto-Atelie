@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_filters',
 
 
 ]
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'atelie.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'/home/manutencao/PycharmProjects/Projeto-Atelie/atelie/templates'],
+        'DIRS': [r'/home/python/DEV/Projeto-Atelie/atelie/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,7 +71,7 @@ TEMPLATES = [
         },
     },
 ]
-# r'/home/python/DEV/Projeto-Atelie/atelie/templates'
+# r'/home/manutencao/PycharmProjects/Projeto-Atelie/atelie/templates'
 WSGI_APPLICATION = 'atelie.wsgi.application'
 
 
@@ -109,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Campo_Grande'
 
 USE_I18N = True
 

@@ -4,9 +4,42 @@
 {% block content %}
  <form action="" method="post">
      {% csrf_token %}
-     {{ form.as_p }}
-     <button type="submit" onclick="Alerta()">Salvar</button>
-     <button type="reset"> Limpar </button>
+     <fieldset>
+        <fieldset class="grupo">
+            <div class="campo">
+                <label >Nome</label>
+                {{ form.nome }}
+            </div>
+        </fieldset>
+         <div class="campo">
+            <label >Telefone</label>
+            {{ form.telefone }}
+        </div>
+        <div class="campo">
+            <label> Entrega: </label>
+            {{form.entrega}}
+        </div>
+          <div class="campo">
+            <label> Endereco: </label>
+            {{form.endereco}}
+        </div>
+
+        <fieldset class="grupo">
+           <div class="campo">
+
+               <div class="esquerda"><label for="produto">Produto</label>
+                    <select name="estado" id="estado">
+                        <option value="">--</option>
+                        <option value="PR">teste</option>
+                    </select>
+               </div>
+                <div class="direita"><label>Quantidade: </label><label>{{form.qtd}}</label></div>
+
+            </div>
+        </fieldset>
+        <button type="submit" onclick="javascript:Alerta()">Salvar</button>
+        <button type="reset"> Limpar </button>
+    </fieldset>
  </form>
 {% endblock content %}
 {% endblock %}

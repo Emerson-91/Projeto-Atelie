@@ -1,16 +1,43 @@
 {% extends 'base.html' %}
 {% block listing %}
-<h1> Aqui vai ser a tela de consulta de clientes!! </h1>
+<h1 align="center"> Consulta de clientes </h1>
 <br>
-<form method="GET">
-<div class=”input-group-prepend”>
-<button class=”btn btn-outline-secondary” type=”submit” id=”button-addon1">Buscar</button>
-</div>
-<input type=”text” class=”form-control” placeholder=”” name=”search” id=”search”>
+<form action="." method="GET">
+    <table class="tabela">
+        <tr>
+            <td id=>
+                <label>Por Nome:  </label>
+                <input type="text" class="txtBusca" name="searchnome" id="searchnome">
+            </td>
+            <td>
+                <label> Por Nr Pedido: </label>
+                <input type="text" class="txtBusca" name="searchnr" id="searchnr">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            <label> Por Periodo:</label>
+            </td>
+        </tr>
+        <tr>
+             <td>
 
+                <label> Data inicio: </label>
+                    <input type="date" name="data_inicial" id="data_inicial">
+                    <label> Data Final: </label>
+                    <input type="date" name="data_final" id="data_final">
+
+            </td>
+            <td rowspan="2">
+            <div>
+                <button class="btnBusca" type="submit" id=”button-addon1">Buscar</button>
+            </div>
+            </td>
+        </tr>
+    </table>
 </form>
 <br><br>
-<table>
+<table id="custom">
   <thead>
     <tr>
         <th>Nr Pedido</th>
@@ -19,9 +46,10 @@
         <th>Endereco</th>
         <th> Data do pedido</th>
         <th> Valor</th>
+        <th> Detalhes</th>
     </tr>
    </thead>
-    {% for value in List %}
+    {% for value in list %}
     <tbody>
        <tr>
         <td>{{ value.pedido }}</td>
@@ -30,6 +58,7 @@
         <td>{{ value.endereco }}</td>
         <td>{{ value.data_pedido}}</td>
         <td>valor</td>
+         <td> <a href="" class="detalhes">Visualizar</a></td>
        </tr>
     </tbody>
     {% endfor %}
