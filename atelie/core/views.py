@@ -1,23 +1,27 @@
 from django.shortcuts import render
-from django.shortcuts import HttpResponse
-from .models import Cadastro
 from .forms import *
 
 from datetime import datetime
-from django.views.generic import CreateView, ListView
 
+
+
+def Home(request):
+    template = "index.html"
+    context = {}
+    return render(request, template, context)
 
 def Venda(request):
     form = CadastroForm()
+    listProd = CadProduto.objects.all()
     if request.method == 'POST':
         formPOST = CadastroForm(request.POST)
         if formPOST.is_valid():
             formPOST.save()
-            return render(request, 'venda.html', {'form': form})
+            return render(request, 'venda.html', {'form': form, 'listProd':listProd})
         else:
-            return render(request, 'venda.html', {'form': formPOST})
+            return render(request, 'venda.html', {'form': formPOST, 'listProd':listProd})
     else:
-        return render(request, 'venda.html', {'form': form})
+        return render(request, 'venda.html', {'form': form, 'listProd':listProd})
 
 
 def Consulta(request):
@@ -36,7 +40,7 @@ def Consulta(request):
     if datainicial and datafinal:
        dI = datetime.strptime(datainicial, "%Y-%m-%d")
        dF = datetime.strptime(datafinal, "%Y-%m-%d")
-       list = list.filter(data_pedido__range=(dI, dF))  # VERIFICAR O PROBLEMA DE NAO ESTAR BUSCANDO
+       list = list.filter(data_pedido__range=(dI, dF))  # BUSCANDO PELA DATA OK
        return render(request, template, {'list': list})
     return render(request, template, {'list': list})
 
@@ -57,7 +61,6 @@ def Produto(request):
         return render(request, 'produtos.html', {'form': form, 'ListProd': ListProd})
 
 
-def Home(request):
-    template = "index.html"
-    context = {}
-    return render(request, template, context)
+def pedido(request):
+
+    return render(request, 'pedido.html')

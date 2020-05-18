@@ -58,7 +58,7 @@
         <td>{{ value.endereco }}</td>
         <td>{{ value.data_pedido}}</td>
         <td>valor</td>
-         <td> <a href="" class="detalhes">Visualizar</a></td>
+         <td> <a href="{% url 'pedido' %}" target="_blank" class="detalhes">Visualizar</a></td>
        </tr>
     </tbody>
     {% endfor %}

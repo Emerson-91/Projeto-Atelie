@@ -28,9 +28,11 @@
            <div class="campo">
 
                <div class="esquerda"><label for="produto">Produto</label>
-                    <select name="estado" id="estado">
-                        <option value="">--</option>
-                        <option value="PR">teste</option>
+                    <select>
+                        <option disabled="true" selected>Selecione ...</option>
+                         {% for value in listProd %}
+                         <option>{{ value.produto }}</option>
+                        {% endfor %}
                     </select>
                </div>
                 <div class="direita"><label>Quantidade: </label><label>{{form.qtd}}</label></div>

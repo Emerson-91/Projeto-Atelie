@@ -8,6 +8,9 @@ class CadProduto(models.Model):
     produto = models.CharField(max_length=100)
     valor = models.FloatField(max_length=10)
 
+    def __str__(self):
+        return self.produto
+
 class Cadastro(models.Model):
     ENTREGA = (( 'Sim', 'sim'),
     ('Nao', 'nao'),)
@@ -18,7 +21,7 @@ class Cadastro(models.Model):
     data_pedido = models.DateField(auto_now_add=True)
     entrega = models.CharField(max_length=10, choices=ENTREGA)
     qtd = models.IntegerField(default=0)
-    prod_id = models.ForeignKey(CadProduto, null=True, related_name='produtos', on_delete=models.CASCADE)
+    nomeProduto = models.ForeignKey(CadProduto, null=True, related_name='prodcadastrado', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome
