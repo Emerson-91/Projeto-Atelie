@@ -4,6 +4,9 @@
 {% block content %}
  <form action="" method="post">
      {% csrf_token %}
+     <table>
+         <tr>
+             <td>
      <fieldset>
         <fieldset class="grupo">
             <div class="campo">
@@ -23,6 +26,8 @@
             <label> Endereco: </label>
             {{form.endereco}}
         </div>
+            </td>
+             <td>
 
         <fieldset class="grupo">
            <div class="campo">
@@ -35,13 +40,16 @@
                         {% endfor %}
                     </select>
                </div>
-                <div class="direita"><label>Quantidade: </label><label>{{form.qtd}}</label></div>
+                <div padding="4px" class="direita"><label>Quantidade: </label>   <label>{{form.qtd}}</label></div>
 
             </div>
         </fieldset>
         <button type="submit" onclick="javascript:Alerta()">Salvar</button>
         <button type="reset"> Limpar </button>
-    </fieldset>
+      </fieldset>
+         </td>
+        </td>
+         </table>
  </form>
 {% endblock content %}
 {% endblock %}

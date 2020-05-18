@@ -31,6 +31,11 @@ def Consulta(request):
     buscapedido = request.GET.get('searchnr')
     datainicial = request.GET.get('data_inicial')
     datafinal = request.GET.get('data_final')
+    entrega = request.GET.get('entrega')
+    if entrega:
+        list = list.filter(entrega__icontains=entrega)
+        return render(request, template, {'list': list})
+
     if buscanome:
         list = list.filter(nome__icontains=buscanome)  #  Buscando pelo nome OK
         return render(request, template, {'list': list})
@@ -62,5 +67,6 @@ def Produto(request):
 
 
 def pedido(request):
+    list = Cadastro.objects.all()
 
-    return render(request, 'pedido.html')
+    return render(request, 'pedido.html', {'list':list})

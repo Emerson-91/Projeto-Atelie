@@ -3,34 +3,46 @@
 <h1 align="center"> Consulta de clientes </h1>
 <br>
 <form action="." method="GET">
-    <table class="tabela">
+    <table border="0px" class="tabela">
         <tr>
             <td id=>
                 <label>Por Nome:  </label>
                 <input type="text" class="txtBusca" name="searchnome" id="searchnome">
+                <br><br>
+                 <div>
+                    <label> Por Periodo:</label>
+                </div>
             </td>
             <td>
-                <label> Por Nr Pedido: </label>
-                <input type="text" class="txtBusca" name="searchnr" id="searchnr">
+                <div>
+                    <label> Por Nr Pedido: </label>
+                    <input type="text" class="txtBusca" name="searchnr" id="searchnr">
+                </div>
+                <br>
+                <div>
+                    <label> Para entregar?: </label><br>
+                    <input type="radio" id="sim" name="entrega" value="sim">
+                    <label for="sim">Sim</label>
+                    <input type="radio" id="nao" name="entrega" value="nao">
+                    <label for="nao">Nao</label><br>
+
+                </div>
             </td>
         </tr>
-        <tr>
-            <td colspan="2">
-            <label> Por Periodo:</label>
-            </td>
-        </tr>
+
         <tr>
              <td>
 
                 <label> Data inicio: </label>
                     <input type="date" name="data_inicial" id="data_inicial">
+                 <br>
                     <label> Data Final: </label>
                     <input type="date" name="data_final" id="data_final">
 
             </td>
             <td rowspan="2">
             <div>
-                <button class="btnBusca" type="submit" id=”button-addon1">Buscar</button>
+                <button class="detalhes" type="submit" id=”button-addon1">Buscar</button>
             </div>
             </td>
         </tr>
@@ -43,6 +55,7 @@
         <th>Nr Pedido</th>
         <th>Nome</th>
         <th>Telefone</th>
+        <th>Entrega? </th>
         <th>Endereco</th>
         <th> Data do pedido</th>
         <th> Valor</th>
@@ -55,6 +68,7 @@
         <td>{{ value.pedido }}</td>
         <td>{{ value.nome }}</td>
         <td>{{ value.telefone}}</td>
+        <td> {{value.entrega }} </td>
         <td>{{ value.endereco }}</td>
         <td>{{ value.data_pedido}}</td>
         <td>valor</td>
