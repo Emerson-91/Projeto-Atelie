@@ -1,0 +1,317 @@
+
+        .nfeArea .imgCanceled {
+            position: absolute;
+            top: 60mm;
+            left: 65mm;
+            z-index: 3;
+            opacity: 0.8;
+            display: none;
+        }
+
+        .nfeArea.invoiceCanceled .imgCanceled {
+            display: block;
+        }
+
+        .nfeArea .imgNull {
+            position: absolute;
+            top: 45mm;
+            left: 65mm;
+            z-index: 3;
+            opacity: 0.8;
+            display: none;
+        }
+
+        .nfeArea.invoiceNull .imgNull {
+            display: block;
+        }
+
+        .nfeArea.invoiceCancelNull .imgCanceled {
+            top: 69mm;
+            left: 85mm;
+            display: block;
+        }
+
+        .nfeArea.invoiceCancelNull .imgNull {
+            top: 40mm;
+            left: 60mm;
+            display: block;
+        }
+
+        .tabela {
+            border: 2px solid #000;
+            border-spacing: 0px;
+            margin: 0px 0px 0px 0px;
+        }
+
+            .tabela tr td {
+                border: 1px solid #000;
+            }
+
+            .tabela table tr td {
+                border-style: none;
+                border-width: 0px;
+            }
+
+        .cabecalho {
+            line-height: normal;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            font-size: 8px;
+            font-family: "Courier New";
+            margin: 0px 0px 0px 2px;
+            line-height: 9px;
+            /*letter-spacing: 1px;*/
+        }
+
+        .tabela dl {
+            border: 0px none #000;
+            border-spacing: 0px;
+            margin: 0px 0px 0px 0px;
+        }
+
+        .tabela dt {
+            margin: 0px 5px;
+            text-transform: uppercase;
+            font: 9px 'Courier New';
+            color: #000;
+            white-space: nowrap;
+        }
+
+        .tabela dd {
+            margin: 0px 5px 1px;
+            color: #369;
+            line-height: normal;
+            font-style: normal;
+            font-variant: normal;
+            font-size: 10px;
+            font-family: "Courier New";
+            height: 14px;
+            white-space: nowrap;
+        }
+
+        .sub-titulo {
+            line-height: normal;
+            font-style: normal;
+            font-weight: bold;
+            font-variant: normal;
+            font-size: 14px;
+            font-family: "Courier New";
+            margin: 0px 0px 0px 0px;
+
+        }
+
+        .corpo {
+            color: #369;
+            line-height: normal;
+            font-style: normal;
+            font-weight: bold;
+            font-variant: normal;
+            font-size: 9px;
+            font-family: "Courier New";
+            margin: 0px 0px 0px 0px;
+            white-space: nowrap;
+            letter-spacing: -1px;
+        }
+
+        .campo_titulo {
+            line-height: normal;
+            font-style: normal;
+            font-weight: bold;
+            font-variant: normal;
+            font-size: 9px;
+            font-family: "Courier New";
+            margin: 0px 0px 0px 0px;
+            white-space: nowrap;
+            word-spacing: -1px;
+        }
+
+        .campo_valor {
+            color: #369;
+            line-height: normal;
+            font-style: normal;
+            font-weight: bold;
+            font-variant: normal;
+            font-size: 10px;
+            font-family: "Courier New";
+            margin: 0px 0px 0px 0px;
+            white-space: pre-line;
+            display: inline-block;
+            max-width: 780px;
+        }
+
+        #popup {
+            position: absolute;
+            top: 4px;
+            right: 3px;
+            text-indent: -9999px;
+            margin: 0px;
+            padding: 0px;
+            width: 52px;
+        }
+
+            #popup li {
+                float: right;
+                margin: 3px;
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+            }
+
+                #popup li.close {
+                    background: url("img/ico/icosup_cancelar.gif") no-repeat 0px 0px !important;
+                }
+
+                    #popup li.close:hover {
+                        background: url("img/ico/icosup_cancelar_hover.gif") no-repeat 0px 0px !important;
+                    }
+
+        #report_content footer {
+            display: none;
+        }
+
+        #print {
+            width: 95%;
+            padding: 35px 0 30px 30px;
+        }
+
+        @media print {
+            * {
+                background: transparent !important;
+                color: black !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+                filter: none !important;
+                -ms-filter: none !important;
+                zoom: 0 !important;
+            }
+            /* Black prints faster: h5bp.com/s */
+            a, a:visited {
+                text-decoration: underline;
+            }
+
+                a[href]:after {
+                    content: " (" attr(href) ")";
+                }
+
+            abbr[title]:after {
+                content: " (" attr(title) ")";
+            }
+
+            .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+                content: "";
+            }
+            /* Don't show links for images, or javascript/internal links */
+            pre, blockquote {
+                border: 1px solid #999;
+                page-break-inside: avoid;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+            /* h5bp.com/t */
+            tr, img {
+                page-break-inside: avoid;
+            }
+
+            img {
+                max-width: 100% !important;
+                max-height: 100% !important;
+            }
+
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+
+            h2, h3 {
+                page-break-after: avoid;
+            }
+
+            header, footer, aside, .render-form, .table, .paging, #printActionBar {
+                display: none !important;
+            }
+
+            header {
+                display: none !important;
+            }
+
+            footer {
+                display: none !important;
+            }
+
+            #ui-datepicker-div {
+                display: none !important;
+            }
+
+            .ui-autocomplete.ui-menu ui-widget.ui-widget-content.ui-corner-all {
+                display: none !important;
+            }
+
+            #maskDel {
+                display: none !important;
+            }
+
+            #container {
+                display: none !important;
+            }
+
+            #report_content {
+                overflow: hidden !important;
+                position: relative !important;
+                width: auto !important;
+                height: auto !important;
+                top: 0 !important;
+                margin: 0 !important;
+                left: 0 !important;
+                border: 0 !important;
+                padding: 0 !important;
+            }
+
+            #print {
+                width: auto !important;
+                height: auto !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                page-break-inside: avoid;
+            }
+
+            .cabecalho {
+                letter-spacing: 0px;
+            }
+
+            span#dadosnfe_ds_additional_information {
+                display: block;
+                width: auto;
+                white-space: normal;
+            }
+
+            .jspContainer {
+                overflow: visible !important;
+            }
+
+            #div_nfe_control_last_ws_response {
+                display: none !important;
+            }
+
+            .nfeArea .imgCanceled {
+                top: 75mm;
+                left: 30mm;
+            }
+
+            .nfeArea .imgNull {
+                top: 75mm;
+                left: 20mm;
+            }
+
+            .nfeArea.invoiceCancelNull .imgCanceled {
+                top: 100mm;
+                left: 35mm;
+            }
+
+            .nfeArea.invoiceCancelNull .imgNull {
+                top: 65mm;
+                left: 15mm;
+            }
+        }
