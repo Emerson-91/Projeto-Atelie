@@ -5,7 +5,7 @@ from django.db.models import CharField
 
 
 class CadProduto(models.Model):
-    produto = models.CharField(max_length=100, primary_key=True)
+    produto = models.CharField(max_length=100)
     valor = models.FloatField(max_length=10)
 
     class Meta:
@@ -25,7 +25,7 @@ class Cadastro(models.Model):
     entrega = models.CharField(max_length=10, choices=ENTREGA)
     qtd = models.IntegerField(default=0)
     nomeProduto = models.ForeignKey(CadProduto, null=True, related_name='prodcadastrado', on_delete=models.CASCADE)
-    total = models.FloatField(max_length=10)
+
 
     class Meta:
         db_table = 'Cadastro'

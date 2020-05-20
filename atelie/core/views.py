@@ -39,14 +39,17 @@ def Consulta(request):
     if buscanome:
         list = list.filter(nome__icontains=buscanome)  #  Buscando pelo nome OK
         return render(request, template, {'list': list})
+
     if buscapedido:
         list = list.filter(pedido__icontains=buscapedido)  # Buscando pelo Nr Pedido OK
         return render(request, template, {'list': list})
+
     if datainicial and datafinal:
        dI = datetime.strptime(datainicial, "%Y-%m-%d")
        dF = datetime.strptime(datafinal, "%Y-%m-%d")
        list = list.filter(data_pedido__range=(dI, dF))  # BUSCANDO PELA DATA OK
        return render(request, template, {'list': list})
+
     return render(request, template, {'list': list})
 
 
@@ -66,7 +69,16 @@ def Produto(request):
         return render(request, 'produtos.html', {'form': form, 'ListProd': ListProd})
 
 
-def pedido(request):
+def pedido(request, pk):
+
     list = Cadastro.objects.all()
 
     return render(request, 'pedido.html', {'list':list})
+
+def update(request, pk):
+    produto = CadProduto.objects.get(pk=pk)
+    form = ProdutosForm(request.POST or None, instance=produto)
+    if form.is_valid():
+        form.save()
+
+    return render(request, 'update_produto.html', {'form':form})

@@ -47,7 +47,7 @@
             </td>
         </tr>
     </table>
-</form>
+
 <br><br>
 <table id="custom">
   <thead>
@@ -72,9 +72,10 @@
         <td>{{ value.endereco }}</td>
         <td>{{ value.data_pedido}}</td>
         <td>valor</td>
-         <td> <a href="{% url 'pedido' %}" target="_blank" class="detalhes">Visualizar</a></td>
+         <td> <a href="{% url 'pedido' value.pedido %}" target="_blank" class="detalhes">Visualizar</a></td>
        </tr>
     </tbody>
     {% endfor %}
 </table>
+    </form>
 {% endblock %}}
