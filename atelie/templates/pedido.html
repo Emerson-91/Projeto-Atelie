@@ -51,8 +51,10 @@
                     </table>
 
                 </td>
+                {% block listing %}
+                {% if pedido.pedido == pedido.get %}
                 <td style="width: 50%; height: 100px; text-align: center; vertical-align: middle;" rowspan="3">
-                    <span class="sub-titulo" style="font-size: large;">Pedido Nr</span>
+                    <span class="sub-titulo" style="font-size: large;">Pedido Nr {{ pedido.pedido }}</span>
                 </td>
 
             </tr>
@@ -139,6 +141,7 @@
             </tbody>
         </table>
     </div>
-
+{% endif %}
+{% endblock %}
 </body>
 </html>

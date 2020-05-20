@@ -70,10 +70,9 @@ def Produto(request):
 
 
 def pedido(request, pk):
+    produto = CadProduto.objects.get(pk=pk)
+    return render(request, 'pedido.html', {'list': list})
 
-    list = Cadastro.objects.all()
-
-    return render(request, 'pedido.html', {'list':list})
 
 def update(request, pk):
     produto = CadProduto.objects.get(pk=pk)
