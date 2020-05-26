@@ -28,29 +28,33 @@
         </div>
             </td>
              <td>
+</form>
+<div>
+    <form action="" method="post">
+            <fieldset class="grupo">
+               <div class="campo">
 
-        <fieldset class="grupo">
-           <div class="campo">
+                   <div class="esquerda"><label>Produto</label>
+                        <select>
+                            <option disabled="true" selected>Selecione ...</option>
+                             {% for value in listProd %}
+                             <option>{{ value.produto }}</option>
+                            {% endfor %}
+                        </select>
+                   </div>
 
-               <div class="esquerda"><label>Produto</label>
-                    <select>
-                        <option disabled="true" selected>Selecione ...</option>
-                         {% for value in listProd %}
-                         <option>{{ value.produto }}</option>
-                        {% endfor %}
-                    </select>
-               </div>
-                <div margin-left="10px" class="direita"><label>Quantidade: </label>   <label>{{form.qtd}}</label></div>
+                    <div margin-left="10px" class="direita"><label>Quantidade: </label>   <label></label></div>
 
-            </div>
-        </fieldset>
-        <button type="submit" onclick="javascript:Alerta()">Salvar</button>
-        <button type="reset"> Limpar </button>
-      </fieldset>
-         </td>
-        </td>
-         </tr>
-         </table>
+                </div>
+            </fieldset>
+            <button type="submit" onclick="javascript:Alerta()">Salvar</button>
+            <button type="reset"> Limpar </button>
+          </fieldset>
+             </td>
+            </td>
+             </tr>
+             </table>
  </form>
+</div>
 {% endblock content %}
 {% endblock %}
