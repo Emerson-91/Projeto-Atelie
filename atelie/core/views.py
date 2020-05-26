@@ -17,11 +17,11 @@ def Venda(request):
         formPOST = CadastroForm(request.POST)
         if formPOST.is_valid():
             formPOST.save()
-            return render(request, 'venda.html', {'form': form, 'listProd':listProd})
+            return render(request, 'cliente.html', {'form': form, 'listProd':listProd})
         else:
-            return render(request, 'venda.html', {'form': formPOST, 'listProd':listProd})
+            return render(request, 'cliente.html', {'form': formPOST, 'listProd':listProd})
     else:
-        return render(request, 'venda.html', {'form': form, 'listProd':listProd})
+        return render(request, 'cliente.html', {'form': form, 'listProd':listProd})
 
 
 def Consulta(request):

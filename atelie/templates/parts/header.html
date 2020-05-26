@@ -13,9 +13,10 @@
     <body>
     {% block navigation %}
 <header id="header">
-	<nav class="links" style="--items: 4;">
+	<nav class="links" style="--items: 5;">
 		<a href="{% url 'index' %}">Ateliê</a>
-        <a href="{% url 'venda' %}">Vendas</a>
+        <a href="{% url 'venda' %}">Clientes</a>
+		<a href="{% url 'venda' %}">Vendas</a>
 		<a href="{% url 'produto' %}">Cad Produtos</a>
 		<a href="{% url 'consulta' %}">Consultas</a>
 

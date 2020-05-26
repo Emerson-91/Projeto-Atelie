@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block listing %}
+<h1 align="center"> Tela de Cadastro de clientes</h1></br>
+{% block content %}
+ <form action="" method="post">
+     {% csrf_token %}
+     <table border="0px">
+         <tr>
+             <td>
+                <fieldset>
+                    <fieldset class="grupo">
+                        <div class="campo">
+                            <label >Nome</label>
+                            {{ form.nome }}
+                        </div>
+                    </fieldset>
+                    <div class="campo">
+                        <label >Telefone</label>
+                        {{ form.telefone }}
+                    </div>
+
+             </td>
+             <td>
+                 <div class="campo" >
+                        <label> Endereco: </label>
+                        {{form.endereco}}
+                 </div>
+                 <div>
+                         <button type="submit" onclick="javascript:Alerta()">Salvar</button>
+                         <button type="reset"> Limpar </button>
+
+                 </div>
+             </td>
+         </tr >
+     </table>
+</form>
+</br>
+<div>
+
+<table id="custom">
+  <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Endereco</th>
+    </tr>
+   </thead>
+    {% for value in list %}
+    <tbody>
+       <tr>
+        <td></td>
+        <td>{{ value.nome }}</td>
+        <td>{{ value.telefone}}</td>
+        <td>{{ value.endereco }}</td>
+        <td>???</td>
+        <td>valor</td>
+         <td> <a href="{% url 'pedido' value.pedido %}" target="_blank" class="detalhes">Visualizar</a></td>
+       </tr>
+    </tbody>
+    {% endfor %}
+</table>
+
+
+</div>
+{% endblock content %}
+
+{% endblock %}

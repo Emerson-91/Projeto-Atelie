@@ -19,12 +19,9 @@ class CadProduto(models.Model):
 
 
 class Cadastro(models.Model):
-    ENTREGA = (( 'Sim', 'sim'),
-    ('Nao', 'nao'),)
     nome = models.CharField(max_length=100)
     telefone = models.CharField(max_length=20,)
     endereco = models.CharField(default=" - ", max_length=100, blank=True)
-    entrega = models.CharField(max_length=10, choices=ENTREGA)
 
 
     class Meta:
@@ -36,12 +33,16 @@ class Cadastro(models.Model):
 
 
 class Pedido(models.Model):
+    ENTREGA = (('Sim', 'sim'),
+               ('Nao', 'nao'),)
     pedido = models.AutoField(primary_key=True)
     produto = models.ForeignKey(CadProduto, on_delete=models.CASCADE)
     cliente = models.ForeignKey(Cadastro, on_delete=models.CASCADE)
     desconto = models.FloatField(default=0)
     qtd = models.IntegerField(default=0)
     data_pedido = models.DateField(auto_now_add=True)
+    entrega = models.CharField(max_length=10, choices=ENTREGA)
+
 
 
 
