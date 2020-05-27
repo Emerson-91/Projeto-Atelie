@@ -1,12 +1,16 @@
 
 from django.urls import path
-from .views import Home, Venda, Consulta, Produto, pedido, update
+
+from . import views
+from .views import Home, Cliente, Consulta, Produto, pedido, update, venda, updatecliente
 urlpatterns = [
     path('', Home, name='index'),
-    path('venda/', Venda, name='venda'),
+    path('cliente/', Cliente, name='cliente'),
     path('consulta/', Consulta, name='consulta'),
+    path('venda/', venda, name='venda'),
     path('produto/', Produto, name='produto'),
     path('pedido/<int:pk>/', pedido, name='pedido'),
-    path('update/<int:pk>/', update, name='update'),
+    path('produto/<int:pk>/', update, name='update'),
+    path('cliente/<int:pk>/', updatecliente, name='updatecliente'),
 
 ]

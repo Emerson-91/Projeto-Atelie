@@ -1,7 +1,7 @@
 <html class="no-js" lang="pt-BR">
 {% load static %}
 <head>
-    <title></title>
+    <title> pedido {{ produto.pedido }}</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -52,9 +52,8 @@
 
                 </td>
                 {% block listing %}
-                {% if pedido.pedido == pedido.get %}
                 <td style="width: 50%; height: 100px; text-align: center; vertical-align: middle;" rowspan="3">
-                    <span class="sub-titulo" style="font-size: large;">Pedido Nr {{ pedido.pedido }}</span>
+                    <span class="sub-titulo" style="font-size: large;">Pedido Nr {{ produto.pedido }}</span>
                 </td>
 
             </tr>
@@ -74,11 +73,11 @@
                         </tr>
                         <tr>
                             <td class="campo_titulo" style="width: 50%; padding-left: 5px">
-                                Nome: <span class="campo_valor" id="emit_corp_ds_issuer_name">[ds_company_issuer_name]</span>
+                                Nome: <span class="campo_valor" id="emit_corp_ds_issuer_name">{{produto.nome}}</span>
                                 <br />
-                                Telefone: <span id="emit_ds_addres" class="campo_valor">[ds_company_address]</span>,
+                                Telefone: <span id="emit_ds_addres" class="campo_valor">{{produto.telefone}}</span>,
                                 <br />
-                                Endereço: <span class="campo_valor" id="emit_corp_ds_city_name">endereco cliente</span>
+                                Endereço: <span class="campo_valor" id="emit_corp_ds_city_name">{{produto.endereco}}</span>
                             </td>
 
                         </tr>
@@ -141,7 +140,6 @@
             </tbody>
         </table>
     </div>
-{% endif %}
 {% endblock %}
 </body>
 </html>

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import *
 
 from datetime import datetime
@@ -10,19 +10,22 @@ def Home(request):
     context = {}
     return render(request, template, context)
 
-def Venda(request):
+def Cliente(request):
+    list = Cadastro.objects.all()
     form = CadastroForm()
-    listProd = CadProduto.objects.all()
     if request.method == 'POST':
-        formPOST = CadastroForm(request.POST)
-        if formPOST.is_valid():
-            formPOST.save()
-            return render(request, 'cliente.html', {'form': form, 'listProd':listProd})
-        else:
-            return render(request, 'cliente.html', {'form': formPOST, 'listProd':listProd})
+       formPOST = CadastroForm(request.POST)
+       if formPOST.is_valid():
+          formPOST.save()
+          return render(request, 'cliente.html', {'form': form, 'list':list})
+       else:
+          return render(request, 'cliente.html', {'form': formPOST, 'list':list})
     else:
-        return render(request, 'cliente.html', {'form': form, 'listProd':listProd})
+          return render(request, 'cliente.html', {'form': form, 'list':list})
 
+
+def venda(request):
+    pass
 
 def Consulta(request):
     template = "consulta.html"
@@ -69,9 +72,9 @@ def Produto(request):
         return render(request, 'produtos.html', {'form': form, 'ListProd': ListProd})
 
 
-def pedido(request, pk):
-    produto = CadProduto.objects.get(pk=pk)
-    return render(request, 'pedido.html', {'list': list})
+def pedido(request, pk, *args, **kwargs):
+    produto = Cadastro.objects.get(pk=pk,)
+    return render(request, 'pedido.html', {'produto': produto})
 
 
 def update(request, pk):
@@ -81,3 +84,11 @@ def update(request, pk):
         form.save()
 
     return render(request, 'update_produto.html', {'form':form})
+
+def updatecliente(request, pk):
+    cliente = Cadastro.objects.get(pk=pk)
+    form = ProdutosForm(request.POST or None, instance=cliente)
+    if form.is_valid():
+        form.save()
+
+    return redirect(request, 'update_cliente.html', {'form':form})

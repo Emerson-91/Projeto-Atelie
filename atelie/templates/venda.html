@@ -1,34 +1,7 @@
 {% extends 'base.html' %}
 {% block listing %}
-<h1> Tela de Cadastro de cliente e vendas de produtos</h1>
+<h1> Tela de vendas de produtos</h1>
 {% block content %}
- <form action="" method="post">
-     {% csrf_token %}
-     <table>
-         <tr>
-             <td>
-     <fieldset>
-        <fieldset class="grupo">
-            <div class="campo">
-                <label >Nome</label>
-                {{ form.nome }}
-            </div>
-        </fieldset>
-         <div class="campo">
-            <label >Telefone</label>
-            {{ form.telefone }}
-        </div>
-        <div class="campo">
-            <label> Entrega: </label>
-            {{form.entrega}}
-        </div>
-          <div class="campo">
-            <label> Endereco: </label>
-            {{form.endereco}}
-        </div>
-            </td>
-             <td>
-</form>
 <div>
     <form action="" method="post">
             <fieldset class="grupo">

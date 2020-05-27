@@ -19,6 +19,7 @@ class CadProduto(models.Model):
 
 
 class Cadastro(models.Model):
+    id = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=100)
     telefone = models.CharField(max_length=20,)
     endereco = models.CharField(default=" - ", max_length=100, blank=True)
@@ -35,17 +36,18 @@ class Cadastro(models.Model):
 class Pedido(models.Model):
     ENTREGA = (('Sim', 'sim'),
                ('Nao', 'nao'),)
+    STATUS_CHOICES = (
+        ("A", "Aberto"),
+        ("F", "Finalizado")
+    )
     pedido = models.AutoField(primary_key=True)
-    produto = models.ForeignKey(CadProduto, on_delete=models.CASCADE)
+    produto = models.ManyToManyField(CadProduto)
     cliente = models.ForeignKey(Cadastro, on_delete=models.CASCADE)
     desconto = models.FloatField(default=0)
     qtd = models.IntegerField(default=0)
     data_pedido = models.DateField(auto_now_add=True)
     entrega = models.CharField(max_length=10, choices=ENTREGA)
-
-
-
-
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES, blank=False, null=False)
 
     class Meta:
         db_table = 'pedido'
