@@ -25,7 +25,8 @@ def Cliente(request):
 
 
 def venda(request):
-    pass
+
+    return render(request, 'venda.html')
 
 def Consulta(request):
     template = "consulta.html"
@@ -91,4 +92,4 @@ def updatecliente(request, pk):
     if form.is_valid():
         form.save()
 
-    return redirect(request, 'update_cliente.html', {'form':form})
+    return render(request, 'update_cliente.html', {'form':form})
