@@ -86,10 +86,11 @@ def update(request, pk):
 
     return render(request, 'update_produto.html', {'form':form})
 
-def updatecliente(request, pk):
+def updatecliente(request, pk, *args, **kwargs):
     cliente = Cadastro.objects.get(pk=pk)
     form = ProdutosForm(request.POST or None, instance=cliente)
     if form.is_valid():
         form.save()
+        return redirect("/cliente")
 
     return render(request, 'update_cliente.html', {'form':form})
