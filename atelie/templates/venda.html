@@ -1,6 +1,47 @@
 {% extends 'base.html' %}
 {% block listing %}
 
-<h1>tela de vendas </h1>
-
+<h1 align="center">tela de vendas </h1>
+</br>
+<div>
+    <h2>cliente:</h2>
+</div>
+<div align="right">
+    <h4> data: xx/xx/xxxx</h4>
+    <h4> pedido Nr: </h4>
+</div>
+</br>
+<div>
+    <p> Entrega: </p>
+    <input type="radio" id="sim" name="sim" value="sim">
+  <label for="sim">Sim</label>
+  <input type="radio" id="nao" name="nao" value="nao">
+  <label for="nao">Nao</label><br>
+</div>
+</br>
+<input type="text" placeholder="Digite um item para incluir..."> <button type="button" value="Incluir">incluir</button>
+</br>
+</br>
+<table align="center" border="1px">
+    <tr>
+        <th> item </th>
+        <th> Quantidade </th>
+        <th> Valor Unit. </th>
+        <th> Subtotal </th>
+    </tr>
+    <tr>
+        <td> X </td>
+        <td> <input type="number"> </td>
+        <td> xx,x</td>
+        <td> xx,x </td>
+    </tr>
+    <tr>
+        <td colspan="2"> Desconto: </td>
+        <td colspan="2"> total:  </td>
+    </tr>
+</table>
+</br>
+<div  align="right" id="salvar">
+    <button class="btn-Salvar" onclick="javascript:Alerta()" type="submit">Salvar</button>
+</div>
 {% endblock %}
