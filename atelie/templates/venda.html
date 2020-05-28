@@ -27,13 +27,14 @@
         <th> item </th>
         <th> Quantidade </th>
         <th> Valor Unit. </th>
-        <th> Subtotal </th>
+        <th colspan="2"> Subtotal </th>
     </tr>
     <tr>
         <td> X </td>
         <td> <input type="number"> </td>
         <td> xx,x</td>
         <td> xx,x </td>
+        <td> <button type="reset" class="btn-limpar"> X </button></td>
     </tr>
     <tr>
         <td colspan="2"> Desconto: </td>
@@ -43,5 +44,6 @@
 </br>
 <div  align="right" id="salvar">
     <button class="btn-Salvar" onclick="javascript:Alerta()" type="submit">Salvar</button>
+    <a href="" class="botao-generico" >Imprimir</a>
 </div>
 {% endblock %}
