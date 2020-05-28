@@ -26,8 +26,8 @@
                         {{form.endereco}}
                  </div>
                  <div>
-                         <button type="submit" onclick="javascript:Alerta()">Salvar</button>
-                         <button type="reset"> Limpar </button>
+                         <button type="submit" class="btn-Salvar" onclick="javascript:Alerta()">Salvar</button>
+                         <button type="reset" class="btn-limpar"> Limpar </button>
 
                  </div>
              </td>
@@ -54,8 +54,8 @@
         <td>{{ value.nome }}</td>
         <td>{{ value.telefone}}</td>
         <td>{{ value.endereco }}</td>
-         <td> <a href="" target="_blank" class="detalhes">Vendas</a>
-              <a href="{% url 'updatecliente' value.id %}" id="altera_botao" class="detalhes" target="_self">Alterar</a>
+         <td> <a href="" target="_blank" class="botao-generico">Vendas</a>
+              <a href="{% url 'updatecliente' value.id %}" class="botao-generico" >Alterar</a>
          </td>
        </tr>
     </tbody>

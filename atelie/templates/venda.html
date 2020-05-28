@@ -1,33 +1,6 @@
 {% extends 'base.html' %}
 {% block listing %}
-<h1> Tela de vendas de produtos</h1>
-{% block content %}
-<div>
-    <form action="" method="post">
-            <fieldset class="grupo">
-               <div class="campo">
 
-                   <div class="esquerda"><label>Produto</label>
-                        <select>
-                            <option disabled="true" selected>Selecione ...</option>
-                             {% for value in listProd %}
-                             <option>{{ value.produto }}</option>
-                            {% endfor %}
-                        </select>
-                   </div>
+<h1>tela de vendas </h1>
 
-                    <div margin-left="10px" class="direita"><label>Quantidade: </label>   <label></label></div>
-
-                </div>
-            </fieldset>
-            <button type="submit" onclick="javascript:Alerta()">Salvar</button>
-            <button type="reset"> Limpar </button>
-          </fieldset>
-             </td>
-            </td>
-             </tr>
-             </table>
- </form>
-</div>
-{% endblock content %}
 {% endblock %}
