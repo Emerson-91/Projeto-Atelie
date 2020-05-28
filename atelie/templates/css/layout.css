@@ -159,6 +159,7 @@ th {
     color: white;
 }
 .detalhes {
+
 	-moz-box-shadow:inset 0px 1px 0px 0px #54a3f7;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #54a3f7;
 	box-shadow:inset 0px 1px 0px 0px #54a3f7;
@@ -178,7 +179,7 @@ th {
 	-webkit-border-bottom-left-radius:3px;
 	-moz-border-radius-bottomleft:3px;
 	border-bottom-left-radius:3px;
-text-indent:0;
+    text-indent:0;
 	border:1px solid #124d77;
 	display:inline-block;
 	color:#ffffff;
@@ -201,3 +202,23 @@ width:100px;
 	position:relative;
 	top:1px;
 }
+
+.btn-Salvar{
+    border-radius: 8px;
+    height:40px;
+    width:100px;
+    background-color:#228B22;
+    color:#ffffff;
+	font-family:arial;
+	font-size:12px;
+	font-weight:bold;
+	font-style:normal;
+
+
+}
+.btn-Salvar:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #2E8B57), color-stop(1, #228B22) );
+	background:-moz-linear-gradient( center top, #0061a7 5%, #007dc1 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1');
+	background-color:#2E8B57;
+	cursor:pointer;

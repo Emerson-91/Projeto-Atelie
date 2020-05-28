@@ -1,29 +1,37 @@
 {% extends 'base.html' %}
 {% block listing %}
-<h1> Tela para cadastro de produtos </h1>
-<br>
+<h1 align="center"> Tela para cadastro de produtos </h1>
+</br> </br>
 {% block content %}
  <form action="" method="post">
      {% csrf_token %}
-     <fieldset class="grupo">
-     <div class="campo">
-            <label class="esquerda">Produto: </label>
-         <label class="direita">{{ form.produto }} </label>
-     </div>
-     </fieldset>
-     <fieldset class="grupo">
-     <div class="campo">
-            <label class="esquerda">Valor: </label>
-         <label class="direita">{{ form.valor }} </label>
-     </div><br>
-    </fieldset>
-     <div  id="salvar">
-        <button class="detalhes" onclick="javascript:Alerta()" type="submit">Salvar</button>
-     </div>
- </form>
+     <table border="0px">
+         <tr>
+             <td>
+                 <div class="campo">
+                        <label class="esquerda">Produto: </label>
+                     <label class="direita">{{ form.produto }} </label>
+                 </div>
+             </td>
+             <td>
+                 <div class="campo">
+                     <label class="esquerda">Valor: </label>
+                    <label class="direita"> {{ form.valor }} </label>
+                </div>
+             </td>
+             <td>
+                 <div  align="center" id="salvar">
+                    <button class="btn-Salvar" onclick="javascript:Alerta()" type="submit">Salvar</button>
+                 </div>
+             </td>
+         </tr>
+         </tr>
+     </table>
+</form>
+</br>
 {% endblock content %}
 <h2 align="center"> Produtos cadastrados</h2>
-<br>
+</br>
 <table id="custom">
   <thead>
     <tr>

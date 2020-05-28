@@ -24,6 +24,16 @@ def Cliente(request):
           return render(request, 'cliente.html', {'form': form, 'list':list})
 
 
+def updatecliente(request, pk, *args, **kwargs):
+    cliente = Cadastro.objects.get(pk=pk)
+    form = CadastroForm(request.POST or None, instance=cliente)
+    if form.is_valid():
+        form.save()
+        return redirect('/projeto/cliente/')
+
+    return render(request, 'cliente.html', {'form':form})
+
+
 def venda(request):
 
     return render(request, 'venda.html')
@@ -83,14 +93,7 @@ def update(request, pk):
     form = ProdutosForm(request.POST or None, instance=produto)
     if form.is_valid():
         form.save()
+        return redirect('/projeto/produto/')
 
-    return render(request, 'update_produto.html', {'form':form})
+    return render(request, 'produtos.html', {'form':form})
 
-def updatecliente(request, pk, *args, **kwargs):
-    cliente = Cadastro.objects.get(pk=pk)
-    form = ProdutosForm(request.POST or None, instance=cliente)
-    if form.is_valid():
-        form.save()
-        return redirect("/cliente")
-
-    return render(request, 'update_cliente.html', {'form':form})
