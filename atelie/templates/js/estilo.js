@@ -7,11 +7,6 @@ function Fechar(){
 style.display = 'none';
 }
 $(document).ready(function()){
-    var ShowForm = function(){
-    vat btn = $(this);
-    $.ajax({
-    url: btn.attr("data-url")
-    })
+    $('phone-mask').mask('00000-0000');
 
-
-}}
+ }
