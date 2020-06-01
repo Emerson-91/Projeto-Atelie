@@ -21,7 +21,8 @@ class ProdutosForm(forms.ModelForm):
 class PedidoForm(forms.ModelForm):
     class Meta:
         model = Pedido
-        fields = ['produto', 'desconto', 'qtd' ]
+        fields = '__all__'
+
 
 
 

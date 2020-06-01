@@ -41,7 +41,7 @@ class Pedido(models.Model):
         ("F", "Finalizado")
     )
     pedido = models.AutoField(primary_key=True)
-    produto = models.ManyToManyField(CadProduto)
+    produto = models.ForeignKey(CadProduto, on_delete=models.CASCADE)
     cliente = models.ForeignKey(Cadastro, on_delete=models.CASCADE)
     desconto = models.FloatField(default=0)
     qtd = models.IntegerField(default=0)

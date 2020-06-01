@@ -45,7 +45,10 @@
        <tr>
         <td>{{ value.produto }}</td>
         <td>R$ {{ value.valor}}</td>
-        <td><a href="{% url 'update' value.id %}" class="botao-generico" >Alterar</a></td>
+        <td>
+            <a href="{% url 'update' value.id %}" class="botao-generico" >Alterar</a>
+            <a href="{% url 'deletaproduto' value.id %}" class="botao-limpar" >DELETAR</a>
+        </td>
        </tr>
     </tbody>
 

@@ -34,13 +34,19 @@ def updatecliente(request, pk, *args, **kwargs):
     return render(request, 'cliente.html', {'form':form})
 
 
-def venda(request):
+def venda(request, *args, **kwargs):
+    form = PedidoForm()
+    context = {'form':form, 'list':list}
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('/projeto/venda/')
 
-    return render(request, 'venda.html')
+    return render(request, 'venda.html', context)
 
 def Consulta(request):
     template = "consulta.html"
-    list = Cadastro.objects.all()
+    list = Pedido.objects.all()
     buscanome = request.GET.get('searchnome')
     buscapedido = request.GET.get('searchnr')
     datainicial = request.GET.get('data_inicial')
@@ -84,7 +90,7 @@ def Produto(request):
 
 
 def pedido(request, pk, *args, **kwargs):
-    produto = Cadastro.objects.get(pk=pk,)
+    produto = Pedido.objects.get(pk=pk,)
     return render(request, 'pedido.html', {'produto': produto})
 
 
@@ -96,4 +102,15 @@ def update(request, pk):
         return redirect('/projeto/produto/')
 
     return render(request, 'produtos.html', {'form':form})
+
+
+def deletaproduto(request, pk):
+    produto = CadProduto.objects.get(pk=pk)
+    form = ProdutosForm(request.POST or None, instance=produto)
+    form.delete()
+    if form.is_valid():
+        form.delete()
+        return redirect('/projeto/produto/')
+
+    return render(request, 'produtos.html', {'form': form})
 
