@@ -20,7 +20,7 @@
     {{form.entrega}}
 </div>
 </br>
-    {{form.produto}} <button type="button" value="Incluir">incluir</button>
+    {{form.produto}}  {{form.qtd}} <button type="button" value="Incluir">incluir</button>
 </br>
 </br>
 <table align="center" border="1px">
@@ -30,7 +30,7 @@
         <th> Valor Unit. </th>
         <th colspan="2"> Subtotal </th>
     </tr>
-    <tr>    {% if list.produto == list.produto%}
+    <tr>    {% if form.produto == list.produto%}
 
         <td> {{form.produto}} </td>
 

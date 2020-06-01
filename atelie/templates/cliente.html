@@ -54,7 +54,7 @@
         <td>{{ value.nome }}</td>
         <td>{{ value.telefone}}</td>
         <td>{{ value.endereco }}</td>
-         <td> <a href="" target="_blank" class="botao-generico">Vendas</a>
+         <td> <a href="{% url 'venda' %}" class="botao-generico">Vendas</a>
               <a href="{% url 'updatecliente' value.id %}" class="botao-generico" >Alterar</a>
          </td>
        </tr>
