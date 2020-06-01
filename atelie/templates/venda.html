@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block listing %}
-
+<style type="text/css">
+input[type="number"]{
+    width: 3%;
+}
+</style>
 <h1 align="center">tela de vendas </h1>
 </br>
 <form action="" method="post">
@@ -22,7 +26,7 @@
 </br>
     <label> Produto: </label> {{form.produto}}
     <label> Qtd: </label> {{form.qtd}}
-    <button type="button" value="Incluir">incluir</button>
+    <button type="submit" value="Incluir">incluir</button>
 </br>
 </br>
 <table align="center" border="1px">
