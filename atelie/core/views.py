@@ -36,7 +36,8 @@ def updatecliente(request, pk, *args, **kwargs):
 
 def venda(request, *args, **kwargs):
     form = PedidoForm()
-    context = {'form':form, 'list':list}
+    data = datetime.now()
+    context = {'data':data, 'form':form, 'list':list}
     if request.method == 'POST':
         if form.is_valid():
             form.save()
