@@ -104,13 +104,11 @@ def update(request, pk):
     return render(request, 'produtos.html', {'form':form})
 
 
-def deletaproduto(request, pk):
+def deletaproduto(request, pk, *args, **kwargs): #FUNCIONANDO O DELETE OK
     produto = CadProduto.objects.get(pk=pk)
-    form = ProdutosForm(request.POST or None, instance=produto)
-    form.delete()
-    if form.is_valid():
-        form.delete()
+    if request.method == "POST":
+        produto.delete()
         return redirect('/projeto/produto/')
 
-    return render(request, 'produtos.html', {'form': form})
+    return render(request, 'deleta.html', {'produto': produto})
 

@@ -55,12 +55,20 @@ class Pedido(models.Model):
     def __str__(self):
         return self.pedido
 
-    def get_total_item(self):
-        return self.qtd * self.produto.valor
 
     def get_total_preco(self):
         return self.get_total_item() - self.desconto
 
+
+class ItemPedido(models.Model):
+    produto = models.ForeignKey(CadProduto, on_delete=models.CASCADE)
+    qtd = models.IntegerField(default=1)
+
+    class Meta:
+        db_table = 'itempedido'
+
+    def get_total_item(self):
+        return self.qtd * self.produto.valor
 
 
 

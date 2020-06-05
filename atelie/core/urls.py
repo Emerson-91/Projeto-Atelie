@@ -11,7 +11,7 @@ urlpatterns = [
     path('produto/', Produto, name='produto'),
     path('pedido/<int:pk>/', pedido, name='pedido'),
     path('produto/<int:pk>/', update, name='update'),
-    path('produto/<int:pk>/', deletaproduto, name='deletaproduto'),
+    path('deleta/<int:pk>/', deletaproduto, name='deletaproduto'),
     path('cliente/<int:pk>/', updatecliente, name='updatecliente'),
 
 ]
